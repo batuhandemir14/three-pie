@@ -1,0 +1,34 @@
+<h2>İlan Ekle</h2>
+<form (submit)="onSubmit()" enctype="multipart/form-data">
+  <div>
+    <label>Başlık:</label>
+    <input type="text" [(ngModel)]="ilan.Baslik" name="baslik" required>
+  </div>
+  <div>
+    <label>Açıklama:</label>
+    <textarea [(ngModel)]="ilan.Aciklama" name="aciklama" required></textarea>
+  </div>
+  <div>
+    <label>Konum:</label>
+    <input type="text" [(ngModel)]="ilan.Konum" name="konum" required>
+  </div>
+  <div>
+    <label>Fiyat:</label>
+    <input type="number" [(ngModel)]="ilan.Fiyat" name="fiyat" required>
+  </div>
+  <div>
+    <label>Tarih:</label>
+    <input type="date" [(ngModel)]="ilan.Tarih" name="tarih" required>
+  </div>
+  <div>
+    <label>Resim:</label>
+    <input type="text" [(ngModel)]="ilan.ResimDosyasi" name="resimdosyasi" required>
+  </div>
+  <button type="submit">Ekle</button>
+</form>
+
+
+
+
+    
+    

@@ -1,0 +1,37 @@
+<body>
+  <form class="signin" [formGroup]="signupForm" (ngSubmit)="signUp()">
+    <div class="container" id="container">
+      <div class="gr" action="#">
+        <h1>Kayıt Ol</h1>
+
+        <span>Hesabını oluştur</span>
+        <input type="hidden" formControlName="user_id" value="1">
+
+        <input type="text" placeholder="Ad" formControlName="user_name" />
+        <input type="text" placeholder="Soyad" formControlName="user_surname" />
+        <div class="formcuk">
+        <select formControlName="user_city_id" placeholder="Şehir" class="form-control">
+          <option value="" disabled selected hidden>Şehir</option>
+          <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+        </select>
+      </div>
+      <div class="formcuk">
+        <select formControlName="user_gender_id" placeholder="Cinsiyet" class="form-control">
+          <option value="" disabled selected hidden>Cinsiyet</option>
+          <option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</option>
+        </select>
+      </div>
+      
+        <input type="email" placeholder="Email" formControlName="user_email" />
+        <input type="password" placeholder="Şifre" formControlName="user_password" />
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <a href="#" routerLink="/login">Zaten Bir Hesabım Var</a>
+        <button>Kayıt Ol</button>
+      </div>
+    </div>
+  </form>
+</body>

@@ -1,0 +1,60 @@
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-9">
+      <div *ngFor="let ilan of ilanlars" class="ilan-card">
+        <h2 class="ilan-baslik">{{ ilan.Baslik }}</h2>
+        <p class="ilan-aciklama">{{ ilan.Aciklama }}</p>
+        <div class="ilan-detaylar">
+          <div class="ilan-detay">
+            <span class="ilan-detay-etiket">Konum:</span>
+            <span class="ilan-detay-deger">{{ ilan.Konum }}</span>
+          </div>
+          <div class="ilan-detay">
+            <span class="ilan-detay-etiket">Fiyat:</span>
+            <span class="ilan-detay-deger">{{ ilan.Fiyat }}</span>
+          </div>
+          <div class="ilan-detay">
+            <span class="ilan-detay-etiket">Tarih:</span>
+            <span class="ilan-detay-deger">{{ ilan.Tarih  }}</span>
+          </div>
+          <div class="ilan-detay">
+            <span class="ilan-detay-etiket">Kullanıcı Adı:</span>
+            <span class="ilan-detay-deger">{{ ilan.User_name }} {{ ilan.User_surname }}</span>
+          </div>
+        </div>
+        <img src="{{ ilan.ResimDosyasi }}" class="ilan-resim" alt="ilan resmi">
+        <button *ngIf="!ilan.isCurrentUserIlan">Geziye Başvur</button>
+      </div>
+    </div>
+ 
+
+ 
+
+
+
+
+    <div class="col-md-3">
+      <div class="filter">
+        <form>
+          <h3>Arama Filtreleme</h3>
+          <div class="form-group">
+            <label for="search">Ara:</label>
+            <input type="text" class="form-control" id="search" name="search" />
+          </div>
+          <div class="form-group">
+            <label for="category">Durumu:</label>
+            <select class="form-control" id="category" name="category">
+              <option value="">Hepsi</option>
+              <option value="books">Müsait</option>
+              <option value="movies">Müsait Değil</option>
+              <option value="music">Kişiye Göre</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-custom">Filtrele</button>
+          <button type="button" class="btn-custom mt-4" routerLink="/ilan">Yeni İlan Ekle</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
